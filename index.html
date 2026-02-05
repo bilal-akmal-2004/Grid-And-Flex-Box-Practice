@@ -7,17 +7,91 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1 class="header">Photo Gallery with CSS Grid</h1>
-    <div class="container">
-      <div class="pics from-left"><img src="./pics/cat1.jpg" alt="" /></div>
-      <div class="pics from-right"><img src="./pics/cat2.jpg" alt="" /></div>
-      <div class="pics from-left"><img src="./pics/cat3.jpg" alt="" /></div>
-      <div class="pics from-right"><img src="./pics/cat4.jpg" alt="" /></div>
-      <div class="pics from-left"><img src="./pics/cat5.jpg" alt="" /></div>
-      <div class="pics from-right"><img src="./pics/cat6.jpg" alt="" /></div>
-      <div class="pics from-left"><img src="./pics/cat7.jpg" alt="" /></div>
-      <div class="pics from-right"><img src="./pics/cat8.jpg" alt="" /></div>
-      <div class="pics from-left"><img src="./pics/cat9.jpg" alt="" /></div>
+    <!-- responsice navbar here to navigate to different sections of the page -->
+    <nav class="Navbar">
+      <img src="./pics/logo.png" alt="Logo here" />
+      <ul class="nav-links">
+        <li><a href="#gallery">Photo Gallery</a></li>
+        <li><a href="#pricing">Pricing Cards</a></li>
+        <li>
+          <a
+            href="https://bilal-akmal-2004.github.io/Personal-Landing-Page/"
+            target="_blank"
+            >My Profile</a
+          >
+        </li>
+      </ul>
+      <!-- burger menu icon -->
+      <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+    <!-- grid layput for picture  -->
+    <div id="gallery">
+      <h1 class="header">Photo Gallery with CSS Grid</h1>
+      <div class="container">
+        <div class="pics from-left"><img src="./pics/cat1.jpg" alt="" /></div>
+        <div class="pics from-right"><img src="./pics/cat2.jpg" alt="" /></div>
+        <div class="pics from-left"><img src="./pics/cat3.jpg" alt="" /></div>
+        <div class="pics from-right"><img src="./pics/cat4.jpg" alt="" /></div>
+        <div class="pics from-left"><img src="./pics/cat5.jpg" alt="" /></div>
+        <div class="pics from-right"><img src="./pics/cat6.jpg" alt="" /></div>
+        <div class="pics from-left"><img src="./pics/cat7.jpg" alt="" /></div>
+        <div class="pics from-right"><img src="./pics/cat8.jpg" alt="" /></div>
+        <div class="pics from-left"><img src="./pics/cat9.jpg" alt="" /></div>
+      </div>
     </div>
+    <!-- pricng cards using flexbox  -->
+    <div id="pricing">
+      <h1 class="header">Pricing Cards with Flexbox</h1>
+      <div class="flex-container">
+        <div class="cards">
+          <h3>Basic</h3>
+          <h4>10 $</h4>
+          <h5>1 GB</h5>
+          <h5>10 SMS</h5>
+          <h5>5 Calls</h5>
+          <h5>Limited Access</h5>
+          <div class="button-div">
+            <button>Buy Now</button>
+          </div>
+        </div>
+        <div class="cards">
+          <h3 style="background-color: black; color: white">Standard</h3>
+          <h4>50 $</h4>
+          <h5>10 GB</h5>
+          <h5>100 SMS</h5>
+          <h5>100 Calls</h5>
+          <h5>Unlimited Access</h5>
+          <div class="button-div">
+            <button>Buy Now</button>
+          </div>
+        </div>
+        <div class="cards">
+          <h3 style="background-color: goldenrod; color: white">Premium</h3>
+          <h4>100 $</h4>
+          <h5>100 GB</h5>
+          <h5>1000 SMS</h5>
+          <h5>1000 Calls</h5>
+          <h5>Unlimited Access</h5>
+          <div class="button-div">
+            <button>Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- script here some javascript for burger menu functionality -->
+    <script>
+      const burger = document.querySelector(".burger");
+      const navLinks = document.querySelector(".nav-links");
+      const gallery = document.querySelector("#gallery");
+      burger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        burger.classList.toggle("line-toggle");
+        gallery.classList.toggle("gallery-margin-top");
+      });
+    </script>
   </body>
 </html>

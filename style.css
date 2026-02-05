@@ -1,6 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 body{
     margin: 0px;
-    padding: 0px;
+    padding-top: 33px;
+}
+
+.Navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: white;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px
+}
+
+.Navbar ul{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.Navbar ul li a{
+   
+    transition: transform 0.6s ease-in-out;
+    padding: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+.Navbar ul li a:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #dfdfdf;
+}
+.Navbar img{
+    width: 70px;
+    height: auto;
+}
+
+.burger{
+    transition: transform 0.6s ease-in-out;
+    display: none;
+}
+
+.line{
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+}
+
+.line-toggle{
+    transform: rotate(-270deg) translate(-5px,6px);
+}
+
+
+
+@media (max-width: 768px) {
+    .Navbar ul {
+        padding: 10px;
+    display: none;
+           position: absolute;
+        top: 53px;
+    left: 0;
+
+    width: 100%;
+        background: white;
+        z-index: 10;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+  }
+
+  .Navbar ul a{
+    background-color: #f2f2f2;
+  }
+
+  .Navbar ul.active {
+    display: flex; /* THIS shows the menu */
+    
+  }
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+}
+
+#gallery{
+    padding: 10px;
+   
+    }
+.gallery-margin-top{
+    margin-top: 137px;
 }
 
 .header{
@@ -14,7 +115,7 @@ body{
 .container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-   grid-auto-rows: 500px;
+   grid-auto-rows: 300px;
     gap:30px;
 }
 
@@ -105,6 +206,88 @@ img:hover{
     grid-row: span 2;
 }
 
+/* flexbox css here 
+ */
+
+ .flex-container{
+    
+
+  font-family: "Open Sans", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+ }
+
+
+ .cards{
+    
+    
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  width: 300px;
+  transition: transform 0.6s ease-in-out;
+ }
+
+  .cards:hover{
+      box-shadow:
+    0 12px 30px rgba(0,0,0,0.18),
+    0 4px 10px rgba(0,0,0,0.1);
+ transform: scale(1.01);
+  }
+
+  .cards h3{
+    background-color: bisque;
+    padding: 10px;
+    margin: 0px;
+    font-size: 36px;
+    width: 100%;
+    text-align  : center;
+  }
+
+    .cards h4{
+        background-color: #e1e1e1;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+        margin: 0px;
+        border-bottom: 1px solid #ccc;
+    }
+    .cards h5{
+          
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+        margin: 0px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .cards button{
+        padding: 10px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: gold;
+        color: black;
+        cursor: pointer;
+    }
+
+    .button-div{
+        background-color: aliceblue ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+    }
+
 @media (max-width: 1839px) {
     
         .pics:nth-child(1) img{
@@ -120,6 +303,7 @@ img:hover{
 .pics:nth-child(9){
     grid-row: span 1;
 }
+
 }
 
 @media (max-width: 1600px) {
@@ -155,7 +339,15 @@ img:hover{
     .header{
         font-size: 40px;
     }
+     .cards{
+         width: 250px;
+     }
+     .container{
+   grid-auto-rows: 200px;
 }
+      
+    }
+
 
 @media (max-width: 850px) {
     .pics:nth-child(1){
@@ -168,6 +360,9 @@ img:hover{
 .pics:nth-child(9){
     grid-column: span 1;
 }
+.cards{
+    width: 100%;
+}
 }
 
 @media (max-width: 768px) {
@@ -178,4 +373,5 @@ img:hover{
     .header{
         font-size: 30px;
     }
+    
 }
