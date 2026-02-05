@@ -289,7 +289,9 @@ img:hover{
     }
 
 @media (max-width: 1839px) {
-    
+    .gallery-margin-top{
+        margin-top: 0px;
+    }
         .pics:nth-child(1) img{
             object-position: right;
     
